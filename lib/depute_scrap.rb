@@ -9,7 +9,7 @@ def scrap_depute
 	ind = 500
 	result = {}
 	array = []
-	10.times do 
+	depute_href.length.times do 
 		page_depute = Nokogiri::HTML(open("http://www2.assemblee-nationale.fr#{depute_href[ind]}"))
 		mail_depute = page_depute.xpath('//a[@class="email"]')
 		nom_depute = page_depute.xpath('//h1[contains(text(), "M.")]') + page.xpath("//h1[contains(text(), 'Mme')]") 
